@@ -21,7 +21,9 @@ connection.query('SELECT * FROM Products', function(err, res){
   }
   console.log("----------------------------");
 
-  inquirer.prompt([{
+var start = function(){
+      console.log('\n-------------------------------------');
+      inquirer.prompt([{
         name: "idBuy",
         type: "input",
         message: "What is the ID of the product you would like to buy?",
@@ -41,7 +43,8 @@ connection.query('SELECT * FROM Products', function(err, res){
           return false;
         } else{
           return true;
-        }
+      }
+      
       }
   }]).then(function(answer) {
         var productID = (answer.idBuy) - 1;
@@ -50,17 +53,27 @@ connection.query('SELECT * FROM Products', function(err, res){
 
         if(res[productID].StockQuantity >= numberOfUnits){
 
-        connection.query('UPDATE products SET ? WHERE ?', [
-          {StockQuantity: (res[productID].StockQuantity - numberOfUnits)},
-          {ID: answer.idBuy}
-        ], function(err, res){
-          if(err) throw err;
-          console.log("Your total is $" + total.toFixed(2));
-        });
+          connection.query('UPDATE products SET ? WHERE ?', [
+            {StockQuantity: (res[productID].StockQuantity - numberOfUnits)},
+            {ID: answer.idBuy}
+          ], function(err, res){
+
+            if(err) throw err;
+            console.log("\nYour total is $" + total.toFixed(2));
+            console.log('-------------------------------------');
+            start();
+          });
+
         } else {
-          console.log("Sorry, there is not units in stock!");
+          console.log("Sorry, there is not enough units in stock!");
+          console.log('\n-------------------------------------');
+          start();
         }
+        start();
         });
-  
+}
+
+start();
 })
+
 
