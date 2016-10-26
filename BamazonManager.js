@@ -17,6 +17,7 @@ connection.connect(function(err){
 
 connection.query('SELECT * FROM Products', function(err, res){
 
+function start(){
   inquirer.prompt({
       name: "action",
       type: "list",
@@ -42,12 +43,25 @@ connection.query('SELECT * FROM Products', function(err, res){
       console.log(res[i].ID + " | " + res[i].ProductName + " | " + "$" + res[i].Price + " | " + res[i].StockQuantity + " | ");
     }
     console.log("----------------------------");
+    start();
   }
 
   var displayLowInventory = function (){
-    console.log("ewrfaewfca");
+      console.log("----------------------------");
+      for (var i = 0; i < res.length; i++) {
+        if(res[i].StockQuantity <= 5){
+          console.log(res[i].ID + " | " + res[i].ProductName + " | " + "$" + res[i].Price + " | " + res[i].StockQuantity + " | ");
+          console.log("----------------------------");
+        } else if (res[i].StockQuantity > 5) {
+          console.log("There are no products low on inventory")
+        }
+      }
+      console.log("----------------------------");
+      start();
   }
 
+}
+start();
 });
 
 
