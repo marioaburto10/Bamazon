@@ -59,17 +59,19 @@ var start = function(){
           ], function(err, res){
 
             if(err) throw err;
+            console.log('\n-------------------------------------');
             console.log("\nYour total is $" + total.toFixed(2));
             console.log('-------------------------------------');
             start();
           });
 
         } else {
+          console.log('\n-------------------------------------');
           console.log("Sorry, there is not enough units in stock!");
           console.log('\n-------------------------------------');
           start();
         }
-        start();
+        // start();
         });
 }
 

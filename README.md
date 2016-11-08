@@ -8,9 +8,13 @@ The app will prompt users with two messages.
   * The first message will ask them the ID of the product they would like to buy.
   * The second message will ask how many units of the product they would like to buy.
 
+![Image of table and prompt](/images/displayProducts1.png)
+
 Once the customer has placed the order, this application will check if your store has enough of the product to meet the customer's request.
   * If not, the app will log a phrase like `Sorry, there is not enough units in stock!`, and then prevent the order from going through.
 
 8. However, if my store *does* have enough of the product, it will fulfill the customer's order.
   * This will update the SQL database to reflect the remaining quantity.
   * Once the update goes through, it will show the customer the total cost of their purchase.
+
+  ![Image of not enough and total](/images/total2.png)
