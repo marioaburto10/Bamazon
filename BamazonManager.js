@@ -107,9 +107,10 @@ function start(){
       });
 
       for (var i = 0; i < res.length; i++) {
+      
                 if(res[i].ID == answer.idBuy){
                   console.log("----------------------------");
-                  console.log('You now have ' + res[i].StockQuantity + ' ' + res[i].ProductName + ' units');
+                  console.log('You now have ' + numberOfUnits + ' more ' + res[i].ProductName + ' units');
                 console.log("----------------------------");
                 }
       }
