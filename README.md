@@ -36,8 +36,8 @@ Once the customer has placed the order, this application will check if your stor
   ![Image of low inventory](/images/lowInventory3.png)
 
 
-  * If a manager selects `Add to Inventory`, your app should display a prompt that will let the manager "add more" of any item currently in the store. 
+  * If a manager selects `Add to Inventory`, it will display a prompt that will let the manager "add more" of any item currently in the store.
 
-  * If a manager selects `Add New Product`, it should allow the manager to add a completely new product to the store.
+  * If a manager selects `Add New Product`, it will allow the manager to add a completely new product to the store.
 
 ![Image of add product](/images/addProduct4.png)
