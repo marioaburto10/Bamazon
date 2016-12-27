@@ -1,12 +1,12 @@
 # Bamazon
-In this activity, I'll be creating an Amazon-like storefront with MySQL. The app will take in orders from customers and deplete stock from the store's inventory as well as let managers view and update their stock.
+This is an Amazon-like storefront with MySQL. The app will take in orders from customers and deplete stock from the store's inventory as well as let managers view and update their stock.
 
 ### #1: Customer View
-Running this application will first display all of the items available for sale. Include the ids, names, and prices of products for sale.
+Running this application will first display all of the items available for sale. Include the IDs, names, and prices of products for sale.
 
-The app will prompt users with two messages.
-  * The first message will ask them the ID of the product they would like to buy.
-  * The second message will ask how many units of the product they would like to buy.
+The app will prompt users with two questions.
+  * The first question will ask the user the ID of the product they would like to buy.
+  * The second question will ask how many units of the product the user would like to buy.
 
 ![Image of table and prompt](/images/displayProducts1.png)
 
@@ -21,7 +21,7 @@ Once the customer has placed the order, this application will check if your stor
 
 ### #2: Manager View
 
-* Created a new Node application called `BamazonManager.js`. Running this application will:
+* Second Node application is called `BamazonManager.js`. Running this application will:
 
   * Menu options include:
     * View Products for Sale
